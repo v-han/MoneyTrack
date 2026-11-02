@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/AppCard" android:clickable="true" android:focusable="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="vertical">
+        <TextView android:id="@+id/title" style="@style/SectionTitle" />
+        <TextView android:id="@+id/summary" style="@style/BodyText" />
+        <TextView style="@style/BodyText" android:text="@string/edit_rule_action" android:textColor="@color/primary" android:layout_marginTop="8dp" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

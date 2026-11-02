@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+        <com.google.android.material.button.MaterialButton android:id="@+id/backButton" style="@style/AppTextButton" android:text="@string/back" app:icon="@drawable/ic_back" />
+        <TextView style="@style/PageTitle" android:text="@string/notification_links" />
+        <TextView style="@style/BodyText" android:text="@string/notification_links_hint" android:layout_marginBottom="16dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/addButton" style="@style/AppButton" android:text="@string/add_notification_link" app:icon="@drawable/ic_add" />
+        <com.google.android.material.card.MaterialCardView android:id="@+id/editorCard" style="@style/AppCard" android:visibility="gone" android:layout_marginTop="12dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                <TextView android:id="@+id/editorTitle" style="@style/SectionTitle" android:text="@string/add_notification_link" />
+                <com.google.android.material.textfield.TextInputLayout style="@style/AppTextInput" android:hint="@string/link_main_source" app:endIconMode="dropdown_menu">
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@+id/mainChoice"
+                        android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="none" android:saveEnabled="false" android:importantForAutofill="no"
+                        android:paddingStart="16dp" android:paddingEnd="0dp" android:paddingVertical="16dp" android:textSize="14sp" android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout style="@style/AppTextInput" android:hint="@string/link_secondary_source" app:endIconMode="dropdown_menu">
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@+id/secondaryChoice"
+                        android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="none" android:saveEnabled="false" android:importantForAutofill="no"
+                        android:paddingStart="16dp" android:paddingEnd="0dp" android:paddingVertical="16dp" android:textSize="14sp" android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout style="@style/AppTextInput" android:hint="@string/link_window" app:helperText="@string/link_window_hint">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/windowSeconds" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="number" android:maxLength="3" android:saveEnabled="false" android:importantForAutofill="no" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/enabledSwitch" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:minHeight="56dp" android:text="@string/enable_notification_link" android:saveEnabled="false" />
+                <TextView android:id="@+id/result" style="@style/BodyText" android:accessibilityLiveRegion="polite" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/saveButton" style="@style/AppButton" android:text="@string/save_changes" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <com.google.android.material.button.MaterialButton android:id="@+id/cancelButton" style="@style/AppTextButton" android:text="@string/cancel" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/deleteButton" style="@style/AppTextButton" android:text="@string/delete_notification_link" android:textColor="@color/error" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <TextView android:id="@+id/emptyHint" style="@style/BodyText" android:text="@string/empty_notification_links" android:layout_marginTop="16dp" />
+        <LinearLayout android:id="@+id/links" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="16dp" />
+    </LinearLayout>
+</ScrollView>

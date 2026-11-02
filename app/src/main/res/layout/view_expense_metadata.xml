@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="16dp">
+    <com.google.android.material.card.MaterialCardView
+        android:theme="@style/ThemeOverlay.MoneyTrack.Reimbursement"
+        style="@style/AppCard"
+        app:cardCornerRadius="16dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/outline">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <TextView
+                style="@style/SectionTitle"
+                android:text="@string/reimbursement_label" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        style="@style/BodyText"
+                        android:text="@string/reimbursement_current" />
+                    <TextView
+                        android:id="@+id/currentReimbursement"
+                        style="@style/SectionTitle"
+                        android:layout_marginBottom="0dp"
+                        android:text="@string/reimbursement_none" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/state_change_arrow"
+                    android:textSize="24sp"
+                    android:textColor="@color/on_surface_variant"
+                    android:paddingHorizontal="12dp"
+                    android:importantForAccessibility="no" />
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/AppTextInput"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_marginTop="0dp"
+                    android:hint="@string/reimbursement_change_to"
+                    app:endIconMode="dropdown_menu">
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/reimbursementChoice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:textSize="14sp"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="0dp"
+                        android:paddingVertical="12dp"
+                        android:saveEnabled="false"
+                        android:importantForAutofill="no" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/reimbursedAmountLayout"
+                style="@style/AppTextInput"
+                android:hint="@string/reimbursed_amount_label"
+                android:visibility="gone"
+                app:helperText="@string/reimbursed_amount_help">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/reimbursedAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal|numberSigned"
+                    android:autofillHints="" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/reimbursementHelp"
+                style="@style/BodyText"
+                android:text="@string/reimbursement_help"
+                android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/countedAmount"
+                style="@style/BodyText"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:accessibilityLiveRegion="polite" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <TextView
+        style="@style/SectionTitle"
+        android:text="@string/bill_tags"
+        android:layout_marginTop="12dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <HorizontalScrollView
+            android:id="@+id/tagScroll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scrollbars="horizontal"
+            android:requiresFadingEdge="horizontal"
+            android:fadingEdgeLength="12dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/tagChoices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleLine="true"
+                    app:singleSelection="false"
+                    app:chipSpacingHorizontal="8dp" />
+                <TextView
+                    android:id="@+id/noTags"
+                    style="@style/BodyText"
+                    android:layout_width="wrap_content"
+                    android:text="@string/no_tags" />
+            </LinearLayout>
+        </HorizontalScrollView>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/manageTags"
+            style="@style/AppOutlinedButton"
+            android:layout_width="wrap_content"
+            android:minHeight="48dp"
+            android:minWidth="0dp"
+            android:paddingHorizontal="12dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/manage_bill_tags_short"
+            android:contentDescription="@string/manage_bill_tags"
+            app:icon="@drawable/ic_add"
+            app:iconSize="18dp" />
+    </LinearLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/AppTextInput"
+        android:hint="@string/note_label"
+        app:helperText="@string/note_help">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine|textCapSentences"
+            android:minLines="3"
+            android:maxLength="500"
+            android:gravity="top|start"
+            android:autofillHints="" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>

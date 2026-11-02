@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <include
+            android:id="@+id/homePanel"
+            layout="@layout/page_home" />
+        <include
+            android:id="@+id/historyPanel"
+            layout="@layout/page_history"
+            android:visibility="gone" />
+        <include
+            android:id="@+id/settingsPanel"
+            layout="@layout/page_settings"
+            android:visibility="gone" />
+    </FrameLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface"
+        app:menu="@menu/main_navigation"
+        app:labelVisibilityMode="labeled" />
+</LinearLayout>

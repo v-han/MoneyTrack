@@ -1,0 +1,24 @@
+<resources>
+    <color name="primary">#006B57</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="primary_container">#A4F2D5</color>
+    <color name="on_primary_container">#002D23</color>
+    <color name="background">#F3F7F4</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_variant">#DFEAE3</color>
+    <color name="on_surface">#17221C</color>
+    <color name="on_surface_variant">#4C6357</color>
+    <color name="outline">#74867B</color>
+    <color name="error">#BA1A1A</color>
+    <color name="pending_container">#FFF0CB</color>
+    <color name="on_pending_container">#654800</color>
+    <color name="reimbursement_pending_container">#FFE0E9</color>
+    <color name="on_reimbursement_pending">#6B2342</color>
+    <color name="reimbursement_partial_container">#E9E1FF</color>
+    <color name="on_reimbursement_partial">#432768</color>
+    <color name="reimbursement_done_container">#DFECFC</color>
+    <color name="on_reimbursement_done">#24456A</color>
+    <color name="reimbursement_accent">#7045A0</color>
+    <color name="reimbursement_selection">#F1EAFF</color>
+    <bool name="light_system_bars">true</bool>
+</resources>

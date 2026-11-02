@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/backButton"
+            style="@style/AppTextButton"
+            android:text="@string/back"
+            app:icon="@drawable/ic_back" />
+        <TextView
+            style="@style/PageTitle"
+            android:text="@string/tag_manager_title" />
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/tag_manager_hint" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameLayout"
+            style="@style/AppTextInput"
+            android:hint="@string/tag_name">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/newName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:maxLength="20"
+                android:autofillHints="" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addButton"
+            style="@style/AppButton"
+            android:text="@string/add_tag" />
+        <TextView
+            android:id="@+id/count"
+            style="@style/BodyText"
+            android:layout_marginTop="16dp" />
+        <LinearLayout
+            android:id="@+id/tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </LinearLayout>
+</ScrollView>

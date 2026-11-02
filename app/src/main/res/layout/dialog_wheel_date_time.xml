@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <TextView
+        style="@style/BodyText"
+        android:text="@string/wheel_hint" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                style="@style/BodyText"
+                android:text="@string/wheel_year"
+                android:gravity="center"
+                android:labelFor="@id/year" />
+            <NumberPicker
+                android:id="@+id/year"
+                android:layout_width="match_parent"
+                android:layout_height="144dp"
+                android:descendantFocusability="blocksDescendants"
+                android:importantForAutofill="noExcludeDescendants" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                style="@style/BodyText"
+                android:text="@string/wheel_month"
+                android:gravity="center"
+                android:labelFor="@id/month" />
+            <NumberPicker
+                android:id="@+id/month"
+                android:layout_width="match_parent"
+                android:layout_height="144dp"
+                android:descendantFocusability="blocksDescendants"
+                android:importantForAutofill="noExcludeDescendants" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                style="@style/BodyText"
+                android:text="@string/wheel_day"
+                android:gravity="center"
+                android:labelFor="@id/day" />
+            <NumberPicker
+                android:id="@+id/day"
+                android:layout_width="match_parent"
+                android:layout_height="144dp"
+                android:descendantFocusability="blocksDescendants"
+                android:importantForAutofill="noExcludeDescendants" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                style="@style/BodyText"
+                android:text="@string/wheel_hour"
+                android:gravity="center"
+                android:labelFor="@id/hour" />
+            <NumberPicker
+                android:id="@+id/hour"
+                android:layout_width="match_parent"
+                android:layout_height="144dp"
+                android:descendantFocusability="blocksDescendants"
+                android:importantForAutofill="noExcludeDescendants" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                style="@style/BodyText"
+                android:text="@string/wheel_minute"
+                android:gravity="center"
+                android:labelFor="@id/minute" />
+            <NumberPicker
+                android:id="@+id/minute"
+                android:layout_width="match_parent"
+                android:layout_height="144dp"
+                android:descendantFocusability="blocksDescendants"
+                android:importantForAutofill="noExcludeDescendants" />
+        </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+</ScrollView>

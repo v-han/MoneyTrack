@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/backButton"
+            style="@style/AppTextButton"
+            android:text="@string/back"
+            app:icon="@drawable/ic_back" />
+        <TextView
+            style="@style/PageTitle"
+            android:text="@string/manual_title" />
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/manual_intro"
+            android:layout_marginBottom="20dp" />
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppCard">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <TextView
+                    style="@style/SectionTitle"
+                    android:text="@string/manual_details" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/amountLayout"
+                    style="@style/AppTextInput"
+                    android:hint="@string/manual_amount_label"
+                    app:helperText="@string/manual_amount_help">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textNoSuggestions"
+                        android:maxLines="1"
+                        android:autofillHints="" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/sourceLayout"
+                    style="@style/AppTextInput"
+                    android:hint="@string/manual_source_label"
+                    app:helperText="@string/manual_source_help">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/sourceName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords"
+                        android:maxLength="40"
+                        android:maxLines="1"
+                        android:autofillHints="" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/dateButton"
+                    style="@style/AppOutlinedButton"
+                    android:text="@string/manual_date_label"
+                    android:layout_marginTop="16dp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/timeButton"
+                    style="@style/AppOutlinedButton"
+                    android:text="@string/manual_time_label" />
+                <TextView
+                    style="@style/BodyText"
+                    android:text="@string/manual_date_help"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <include
+            android:id="@+id/metadata"
+            layout="@layout/view_expense_metadata" />
+        <TextView
+            android:id="@+id/result"
+            style="@style/BodyText"
+            android:accessibilityLiveRegion="polite"
+            android:layout_marginBottom="12dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveButton"
+            style="@style/AppButton"
+            android:text="@string/manual_save" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/backButton"
+            style="@style/AppTextButton"
+            android:text="@string/back"
+            app:icon="@drawable/ic_back" />
+        <TextView
+            style="@style/PageTitle"
+            android:text="@string/expense_details_title" />
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppCard">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <TextView
+                    android:id="@+id/amount"
+                    style="@style/PageTitle" />
+                <TextView
+                    android:id="@+id/source"
+                    style="@style/BodyText" />
+                <TextView
+                    android:id="@+id/confirmation"
+                    style="@style/BodyText" />
+                <TextView android:id="@+id/linkedSources" style="@style/BodyText"
+                    android:layout_marginTop="8dp" android:visibility="gone" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <include
+            android:id="@+id/metadata"
+            layout="@layout/view_expense_metadata" />
+        <TextView
+            android:id="@+id/result"
+            style="@style/BodyText"
+            android:accessibilityLiveRegion="polite" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveButton"
+            style="@style/AppButton"
+            android:text="@string/save_changes" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/removeButton"
+            style="@style/AppTextButton"
+            android:text="@string/remove_expense"
+            android:textColor="@color/error" />
+    </LinearLayout>
+</ScrollView>

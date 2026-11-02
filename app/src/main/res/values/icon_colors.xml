@@ -1,0 +1,4 @@
+<resources>
+    <!-- 品牌底色固定，不随应用的深色模式改变。 -->
+    <color name="ic_launcher_background">#006B57</color>
+</resources>

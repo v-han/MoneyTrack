@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/historySummaryBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        android:stateListAnimator="@null"
+        app:liftOnScroll="false">
+        <!-- 标题与筛选区先滚出；金额卡片不设置滚动标记，到顶后保持可见。 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            app:layout_scrollFlags="scroll">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+                <TextView
+                    style="@style/PageTitle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/history_title" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/reimbursementFilter"
+                    style="@style/AppOutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:minWidth="0dp"
+                    android:minHeight="48dp"
+                    android:paddingHorizontal="12dp"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/reimbursement_all"
+                    android:textSize="13sp"
+                    android:textColor="@color/reimbursement_accent"
+                    app:iconTint="@color/reimbursement_accent"
+                    app:strokeColor="@color/reimbursement_accent"
+                    app:icon="@drawable/ic_expand_more"
+                    app:iconSize="18dp"
+                    app:iconGravity="textEnd"
+                    app:iconPadding="4dp" />
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/periodGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                app:selectionRequired="true"
+                app:checkedButton="@id/periodMonth">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/periodDay"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:text="@string/period_day"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minHeight="48dp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/periodWeek"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:text="@string/period_week"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minHeight="48dp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/periodMonth"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:text="@string/period_month"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minHeight="48dp" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/previousButton"
+                    style="@style/AppTextButton"
+                    android:text="@string/previous_period"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/currentButton"
+                    style="@style/AppTextButton"
+                    android:text="@string/current_period"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/nextButton"
+                    style="@style/AppTextButton"
+                    android:text="@string/next_period"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/rangeLabel"
+                style="@style/BodyText"
+                android:textStyle="bold"
+                android:paddingBottom="12dp" />
+        </LinearLayout>
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppCard"
+            android:layout_marginHorizontal="20dp"
+            app:cardBackgroundColor="@color/primary_container">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <TextView
+                    style="@style/BodyText"
+                    android:text="@string/period_total_label"
+                    android:textColor="@color/on_primary_container" />
+                <TextView
+                    android:id="@+id/historyTotal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="40sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/on_primary_container"
+                    android:layout_marginTop="8dp" />
+                <TextView
+                    android:id="@+id/count"
+                    style="@style/BodyText"
+                    android:textColor="@color/on_primary_container" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/historyScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="20dp">
+            <LinearLayout
+                android:id="@+id/expenses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+            <TextView
+                android:id="@+id/empty"
+                style="@style/BodyText"
+                android:text="@string/history_empty" />
+            <TextView
+                android:id="@+id/shownCount"
+                style="@style/BodyText" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/historyMore"
+                style="@style/AppOutlinedButton"
+                android:text="@string/load_more" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <!-- 深色导航栏图标从 Android 8.1 才可用，使用资源限定符兼容 Android 8.0。 -->
+    <style name="Theme.MoneyTrack" parent="Base.Theme.MoneyTrack">
+        <item name="android:windowLightNavigationBar">@bool/light_system_bars</item>
+        <item name="android:navigationBarColor">@color/background</item>
+    </style>
+</resources>

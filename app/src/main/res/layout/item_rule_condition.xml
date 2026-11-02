@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal" android:gravity="center_vertical"
+    android:baselineAligned="false" android:layout_marginBottom="6dp"
+    android:clipChildren="false" android:clipToPadding="false">
+    <TextView android:id="@+id/number" android:layout_width="24dp" android:layout_height="48dp"
+        android:gravity="center_vertical" android:layout_gravity="top"
+        android:textSize="12sp" android:textColor="@color/on_surface_variant" android:importantForAccessibility="no" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/conditionLayout" style="@style/AppTextInput"
+        android:layout_width="0dp" android:layout_weight="1"
+        android:layout_marginTop="0dp" app:hintEnabled="false">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/condition" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:minHeight="48dp" android:inputType="text"
+            android:singleLine="true" android:imeOptions="actionNext|flagNoExtractUi"
+            android:paddingHorizontal="12dp" android:paddingVertical="10dp"
+            android:textSize="14sp" android:autofillHints="" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/removeButton" style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="48dp" android:layout_height="48dp"
+        android:layout_gravity="top"
+        android:minWidth="0dp" android:padding="12dp" android:insetTop="0dp" android:insetBottom="0dp"
+        android:contentDescription="@string/remove_rule_condition"
+        app:icon="@drawable/ic_delete" app:iconSize="24dp"
+        app:iconPadding="0dp" app:iconTint="@color/error" />
+</LinearLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <TextView
+            style="@style/PageTitle"
+            android:text="@string/settings_title" />
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/settings_hint"
+            android:layout_marginBottom="20dp" />
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppCard">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <TextView
+                    style="@style/SectionTitle"
+                    android:text="@string/notification_title" />
+                <TextView
+                    android:id="@+id/status"
+                    style="@style/BodyText"
+                    android:accessibilityLiveRegion="polite" />
+                <TextView
+                    android:id="@+id/connectionHelp"
+                    style="@style/BodyText"
+                    android:text="@string/connection_help"
+                    android:layout_marginTop="12dp" />
+                <TextView
+                    android:id="@+id/notificationDiagnostic"
+                    style="@style/BodyText"
+                    android:layout_marginTop="12dp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/permissionButton"
+                    style="@style/AppOutlinedButton"
+                    android:text="@string/notification_settings" />
+                <TextView
+                    android:id="@+id/backgroundStatus"
+                    style="@style/BodyText"
+                    android:accessibilityLiveRegion="polite"
+                    android:layout_marginTop="12dp" />
+                <TextView style="@style/BodyText" android:text="@string/background_hint"
+                    android:layout_marginTop="4dp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/backgroundToggle"
+                    style="@style/AppButton"
+                    android:text="@string/enable_background" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/reconnectButton" style="@style/AppTextButton"
+                        android:layout_width="0dp" android:layout_weight="1"
+                        android:text="@string/reconnect_short" android:contentDescription="@string/reconnect" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/appSettingsButton" style="@style/AppTextButton"
+                        android:layout_width="0dp" android:layout_weight="1"
+                        android:text="@string/app_background_settings_short" android:contentDescription="@string/app_background_settings" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppCard">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <TextView
+                    style="@style/SectionTitle"
+                    android:text="@string/notification_configuration" />
+                <TextView
+                    style="@style/BodyText"
+                    android:text="@string/notification_configuration_hint" />
+                <TextView
+                    android:id="@+id/rulesStatus"
+                    style="@style/BodyText"
+                    android:layout_marginTop="8dp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/rulesButton"
+                    style="@style/AppButton"
+                    android:text="@string/notification_configuration" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppCard">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <TextView
+                    style="@style/SectionTitle"
+                    android:text="@string/tag_manager_title" />
+                <TextView
+                    style="@style/BodyText"
+                    android:text="@string/tag_manager_hint" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/manageTagsButton"
+                    style="@style/AppOutlinedButton"
+                    android:text="@string/tag_manager_title" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppCard">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <TextView
+                    style="@style/SectionTitle"
+                    android:text="@string/data_title" />
+                <TextView
+                    style="@style/BodyText"
+                    android:text="@string/clear_hint" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/clearButton"
+                    style="@style/AppTextButton"
+                    android:text="@string/clear_expenses"
+                    android:textColor="@color/error" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</ScrollView>

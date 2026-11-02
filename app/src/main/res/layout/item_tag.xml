@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/AppCard"
+    android:layout_marginBottom="6dp"
+    app:cardCornerRadius="12dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="0dp"
+        android:paddingEnd="4dp"
+        android:paddingVertical="2dp">
+        <ImageButton
+            android:id="@+id/dragHandle"
+            android:layout_width="48dp" android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_drag_handle" app:tint="@color/on_surface_variant"
+            android:contentDescription="@string/drag_tag" />
+        <TextView
+            android:id="@+id/name"
+            style="@style/BodyText"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/on_surface"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:ellipsize="end" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/renameButton"
+            style="@style/AppTextButton"
+            android:text="@string/rename_tag" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/deleteButton"
+            style="@style/AppTextButton"
+            android:text="@string/delete_tag_short"
+            android:textColor="@color/error" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
